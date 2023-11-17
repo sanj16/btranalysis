@@ -4,6 +4,7 @@ body {
     font-family: 'Balsamiq Sans', sans-serif;
     font-family: 'Raleway', sans-serif;
     font-family: 'Unbounded', sans-serif;
+    overflow-x: hidden;
 }
 .page {
     height: 100vh;
@@ -18,8 +19,18 @@ body {
     height: 100vh;
     align-items: center;
     font-size: 5rem;
-    color: white;
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position-x: right;
     display: flex;
+    background-image: url("https://i.ibb.co/WPH5mF8/roads.png");
+    overflow: hidden;
+}
+#car img{
+    position: absolute;
+    height: 30%;
+    width: auto;
+    left:0;
 }
 .odometer{
     font-size: 170%;
@@ -38,3 +49,33 @@ body {
 
     text-shadow: 0.08em 0.05em #F5BB1E;
 }
+.happen p {
+    font-size: 170%;
+    color: black;
+    top:65%;
+    position: absolute;
+    font-family:Unbounded;
+    left:90px;
+
+    text-shadow: 0.09em 0.05em #66A92F;/
+}
+
+/* Add these styles to your CSS file */
+#car img {
+    position: absolute;
+    top: 100%;
+    left: 68%;
+    transform: translate(-11%, -20%);
+    animation: moveCar 3s linear infinite; /* Set the loop duration to 3 seconds */
+}
+
+@keyframes moveCar {
+    0% {
+        transform: translate(-78%, -57%);
+    }
+    100% {
+        transform: translate(calc(10vw + 97%), -60vh); /* Continuous forward movement */
+    }
+}
+
+

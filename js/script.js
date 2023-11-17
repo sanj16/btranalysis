@@ -1,3 +1,3 @@
 setTimeout(function(){
-    odometer.innerHTML = '732276';
+    odometer.innerHTML = '1130';
 },30)
