@@ -139,3 +139,19 @@ body {
     align-items: center;
     display: flex;
 }
+
+
+body{
+    background: linear-gradient(to right, #c0c0aa, #1cefff);
+  }
+  
+  .cd__main p{
+      padding: 20% 10%;
+      font-size: 200%;
+      font-family: arial;
+      color: #333333;
+  }
+  #retype{
+      color: #3333DD;
+      border-right: solid 0.1em #333377;
+  }
