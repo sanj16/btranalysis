@@ -21,9 +21,12 @@
     <div class="happen">
         <p>accidents take place each day</p>
     </div>  
-    <div class="page" style="background-color: rgb(255, 255, 255);">
+    <div class="page2" style="background-color: rgb(255, 255, 255);">
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-            <div style="width: 600px; height: 600px;">
+        <div class="title-2">
+            <p>State Wise Analysis</p>
+        </div>
+            <div style="width: 500px; height: 500px; padding:100px;">
                 <canvas id="myPieChart"></canvas>
             </div>
             <script>
@@ -78,35 +81,37 @@
         
                 var ctx = document.getElementById('myPieChart').getContext('2d');
                 var myPieChart = new Chart(ctx, {
-                    type: 'pie',
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            data: values,
-                            backgroundColor: uniqueColors,
-                            borderColor: 'white',
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        animation: {
-                            animateRotate: true,
-                            animateScale: true
-                        },
-                        legend: {
-                            display: true,
-                            position: 'right'
-                        },
-                        layout: {
-                            padding: {
-                                left: 10,
-                                right: 10,
-                                top: 10,
-                                bottom: 10
-                            }
-                        }
-                    }
-                });
+    type: 'pie',
+    data: {
+        labels: labels,
+        datasets: [{
+            data: values,
+            backgroundColor: uniqueColors,
+            borderColor: 'white',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        animation: {
+            animateRotate: true,
+            animateScale: true
+        },
+        plugins: {
+            legend: {
+                display: false // Set display to false to hide the legend
+            }
+        },
+        layout: {
+            padding: {
+                left: 10,
+                right: 10,
+                top: 10,
+                bottom: 10
+            }
+        }
+    }
+});
+
         
                 // Function to generate unique colors
                 function generateUniqueColors(count) {
@@ -118,7 +123,7 @@
                     return colors;
                 }
             </script>
-            </div>
+    </div>
         
     <div class="page" style="background-color: green;">P A G E 3</div>
     <div class="page" style="background-color: red">P A G E 4</div>
