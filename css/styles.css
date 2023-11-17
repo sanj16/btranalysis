@@ -9,17 +9,23 @@ body {
     height: 100vh;
     width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
     font-size: 5rem;
     color: white;
+    justify-content: center;
+}
+.page1 {
+    height: 100vh;
+    align-items: center;
+    font-size: 5rem;
+    color: white;
+    display: flex;
 }
 .odometer{
     font-size: 170%;
     color: black;
-    text-align:  left;
-    position: absolute;
-    
+    justify-content: center;
+    left:90px;
 }
 
 .title{
@@ -29,5 +35,6 @@ body {
     position: absolute;
     font-family:Unbounded;
     left:90px;
+
     text-shadow: 0.08em 0.05em #F5BB1E;
 }
