@@ -52,7 +52,7 @@ body {
 #car img {
     position: absolute;
     top: 100%; /* Adjust to your preference */
-    left: 75%; /* Adjust to your preference */
+    left: 68%; /* Adjust to your preference */
     transform: translate(-50%, -50%);
     animation: moveCar 1s linear forwards infinite;
 }
@@ -62,6 +62,6 @@ body {
         transform: translate(-50%, -50%);
     }
     100% {
-        transform: translate(8vw, -49vh); /* Adjust this to move diagonally left */
+        transform: translate(8vw, -40vh); /* Adjust this to move diagonally left */
     }
 }
