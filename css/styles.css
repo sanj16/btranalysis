@@ -23,6 +23,7 @@ body {
     background-position-x: right;
     display: flex;
     background-image: url("https://i.ibb.co/WPH5mF8/roads.png");
+    overflow: hidden;
 }
 #car img{
     position: absolute;
@@ -46,4 +47,21 @@ body {
     left:90px;
 
     text-shadow: 0.08em 0.05em #F5BB1E;
+}
+/* Add these styles to your CSS file */
+#car img {
+    position: absolute;
+    top: 100%; /* Adjust to your preference */
+    left: 75%; /* Adjust to your preference */
+    transform: translate(-50%, -50%);
+    animation: moveCar 1s linear forwards infinite;
+}
+
+@keyframes moveCar {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translate(8vw, -49vh); /* Adjust this to move diagonally left */
+    }
 }
