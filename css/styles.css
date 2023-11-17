@@ -77,5 +77,16 @@ body {
         transform: translate(calc(10vw + 97%), -60vh); /* Continuous forward movement */
     }
 }
+::-moz-selection { /* Code for Firefox */
+    color: #F5BB1E;
+    background: rgb(0, 0, 0);
+    text-shadow: none;
+  }
+  
+  ::selection {
+    color: #F5BB1E;
+    background: rgb(0, 0, 0);
+    text-shadow: none;
+  }
 
 
