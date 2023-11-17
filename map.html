@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animated Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Set background color to black */
+            color: #fff; /* Set text color to white */
+            transition: background-color 0.8s;
+            overflow: hidden;
+        }
+        #map {
+            height: 100vh;
+            width: 100vw; /* Set map height to full viewport height */
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script>
+        // Create a Leaflet map with a dark theme
+        const map = L.map('map', {
+            center: [20.5937, 78.9629],
+            zoom: 5,
+            attributionControl: false, // Hide attribution
+            zoomControl: false // Hide zoom control
+        });
+
+        // Add a dark tile layer
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            maxZoom: 18,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Define the coordinates of cities
+        const cities = {
+            chennai: { lat: 13.0827, lon: 80.2707 },
+            bhopal: { lat: 23.2599, lon: 77.4126 },
+            delhi: { lat: 28.6139, lon: 77.2090 },
+            bangalore: { lat: 12.9716, lon: 77.5946 },
+            kolkata: { lat: 22.5726, lon: 88.3639 }
+        };
+
+        // Add cool effects to highlight and zoom into the cities
+        const highlightCities = () => {
+            const zoomLevel = 10;
+
+            // Zoom in on Chennai
+            map.flyTo(cities.chennai, zoomLevel, {
+                duration: 2,
+                easeLinearity: 0.25
+            });
+
+            setTimeout(() => {
+                // Zoom in on Bhopal
+                map.flyTo(cities.bhopal, zoomLevel, {
+                    duration: 2,
+                    easeLinearity: 0.25
+                });
+            }, 3000); // Delay for 3 seconds
+
+            setTimeout(() => {
+                // Zoom in on Delhi
+                map.flyTo(cities.delhi, zoomLevel, {
+                    duration: 2,
+                    easeLinearity: 0.25
+                });
+            }, 6000); // Delay for 6 seconds
+
+            setTimeout(() => {
+                // Zoom in on Bangalore
+                map.flyTo(cities.bangalore, zoomLevel, {
+                    duration: 2,
+                    easeLinearity: 0.25
+                });
+            }, 9000); // Delay for 9 seconds
+
+            setTimeout(() => {
+                // Zoom in on Kolkata
+                map.flyTo(cities.kolkata, zoomLevel, {
+                    duration: 2,
+                    easeLinearity: 0.25
+                });
+            }, 12000); // Delay for 12 seconds
+
+            setTimeout(() => {
+                // Zoom out to show entire India
+                map.flyTo([20.5937, 78.9629], 5, {
+                    duration: 2,
+                    easeLinearity: 0.25
+                });
+            }, 15000); // Delay for 15 seconds
+        };
+
+        // Add animated dots to the map for specific cities
+        const generateCityData = () => {
+            return [
+                { lat: cities.chennai.lat, lon: cities.chennai.lon },
+                { lat: cities.bhopal.lat, lon: cities.bhopal.lon },
+                { lat: cities.delhi.lat, lon: cities.delhi.lon },
+                { lat: cities.bangalore.lat, lon: cities.bangalore.lon },
+                { lat: cities.kolkata.lat, lon: cities.kolkata.lon }
+            ];
+        };
+
+        const cityData = generateCityData();
+
+        cityData.forEach((city, index) => {
+            const marker = L.marker([city.lat, city.lon], {
+                icon: L.divIcon({
+                    className: 'custom-marker',
+                    html: '<div class="blinking-spot"></div>',
+                    iconSize: [10, 10],
+                    iconAnchor: [5, 5]
+                })
+            }).addTo(map);
+        });
+
+        // Call the function to highlight and zoom into cities
+        highlightCities();
+    </script>
+
+    <style>
+        body.dark-mode {
+            background-color: #333; /* Dark mode background color */
+            color: #fff; /* Dark mode text color */
+        }
+
+        .custom-marker {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .blinking-spot {
+            width: 10px;
+            height: 10px;
+            background-color: #D32F2F; /* Red color */
+            border-radius: 50%;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+
+    <script>
+        // Toggle dark mode
+        document.body.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+</html>
