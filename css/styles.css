@@ -5,6 +5,7 @@ body {
     font-family: 'Raleway', sans-serif;
     font-family: 'Unbounded', sans-serif;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 .page {
     height: 100vh;
@@ -33,6 +34,7 @@ body {
     color: rgb(255, 255, 255);
     
 }
+
 
 .page3{
     height: 100vh;
@@ -93,6 +95,12 @@ body {
     font-family:Unbounded;
     left:90px;
 
+    text-shadow: 0.09em 0.05em #66A92F;/
+}
+.word p{
+    font-size: 35%;
+    color: black;
+    font-family:Unbounded;
     text-shadow: 0.09em 0.05em #66A92F;/
 }
 
