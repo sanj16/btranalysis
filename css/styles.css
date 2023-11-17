@@ -48,6 +48,17 @@ body {
 
     text-shadow: 0.08em 0.05em #F5BB1E;
 }
+.happen p {
+    font-size: 170%;
+    color: black;
+    top:65%;
+    position: absolute;
+    font-family:Unbounded;
+    left:90px;
+
+    text-shadow: 0.09em 0.05em #66A92F;/
+}
+
 /* Add these styles to your CSS file */
 #car img {
     position: absolute;
