@@ -21,8 +21,8 @@ body {
 }
 
 .title{
-    position: absolute;
     font-size: 40px;
     color: black;
     top:0px;
+    font-family:Unbounded;
 }
