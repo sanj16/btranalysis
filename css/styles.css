@@ -24,5 +24,6 @@ body {
     font-size: 40px;
     color: black;
     top:0px;
+    position: absolute;
     font-family:Unbounded;
 }
