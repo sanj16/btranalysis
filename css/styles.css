@@ -62,17 +62,19 @@ body {
 /* Add these styles to your CSS file */
 #car img {
     position: absolute;
-    top: 100%; /* Adjust to your preference */
-    left: 68%; /* Adjust to your preference */
-    transform: translate(-50%, -50%);
-    animation: moveCar 1s linear forwards infinite;
+    top: 100%;
+    left: 68%;
+    transform: translate(-11%, -20%);
+    animation: moveCar 3s linear infinite; /* Set the loop duration to 3 seconds */
 }
 
 @keyframes moveCar {
     0% {
-        transform: translate(-50%, -50%);
+        transform: translate(-78%, -57%);
     }
     100% {
-        transform: translate(8vw, -40vh); /* Adjust this to move diagonally left */
+        transform: translate(calc(10vw + 97%), -60vh); /* Continuous forward movement */
     }
 }
+
+
