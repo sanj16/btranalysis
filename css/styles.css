@@ -33,6 +33,16 @@ body {
     color: rgb(255, 255, 255);
     
 }
+
+.page3{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    font-size: 5rem;
+    color: rgb(255, 255, 255);
+    justify-content: center;
+    
+}
 #car img{
     position: absolute;
     height: 30%;
@@ -102,4 +112,11 @@ body {
     padding:50px;
     font-family:Unbounded;
     text-shadow: 0.08em 0.05em #9b9797;
+}
+#bar3{
+    width: 60%; 
+    height: 80%; 
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
