@@ -19,6 +19,11 @@ const col = document.getElementById('column');
 col.innerHTML =
   '<object width="100%" height="100%" type="text/html" data="../column.html"</object>';
 
+const model = document.getElementById('ml');
+
+model.innerHTML =
+  '<object width="100%" height="100%" type="text/html" data="../model.html"</object>';
+
 // OBJECT: 'retype' controls the deletion and creation of new words
 var retype = {
 	// ARRAY: 'retypePhrases' contains the words that will be switched
