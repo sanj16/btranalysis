@@ -13,8 +13,8 @@
         }
 
         // Your dataset (replace this with your data)
-        const labels = ['Label 1', 'Label 2', 'Label 3'];
-        const data = [50, 70, 30];
+        const labels = ['2019', '2020', '2021','2022'];
+        const data = [449002,372200, 412000,461312];
         const colors = [];
 
         // Generate random colors for each bar
@@ -29,7 +29,7 @@
             data: {
                 labels: labels,
                 datasets: [{
-                    label: 'Bar Chart',
+                    label: 'Year wise analysis',
                     data: data,
                     backgroundColor: colors, // Assign random colors to bars
                     borderColor: colors.map(color => color.replace('0.5', '1')), // Darker border color
