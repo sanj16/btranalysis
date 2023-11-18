@@ -104,8 +104,6 @@ body {
     position: absolute;
     font-family:Unbounded;
     left:90px;
-
-    text-shadow: 0.09em 0.05em #66A92F;/
 }
 .word p{
     font-size: 28%;
@@ -189,4 +187,9 @@ body{
     right:0;
     height:40dvh;  
     text-align: right;
-width:90dvb}
+width:90dvb
+}
+.predicted {
+    font-weight: bold;
+    font-size: 1.2em;
+}

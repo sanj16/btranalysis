@@ -30,7 +30,7 @@
 
 <body>
     <div class="container">
-        <h1>Try our ML Model</h1>
+        <u><center><h1>Try our ML Model</h1></u>    <br>
         <form id="apiForm">
             <p>A Polynomial Regression with 92.87% Accuracy.</p>
             <div class="form-group">
@@ -40,17 +40,13 @@
             <button type="submit" class="btn btn-primary">Send Request</button>
         </form>
         <div id="result" class="mt-3"></div>
-
+        <br>
         <h2>Links:</h2>
         <ul>
-            <li><a href="https://d-h70uypeu47z8.studio.ap-south-1.sagemaker.aws/jupyter/default/files/accident.ipynb?_xsrf=2%7Ca7b0d085%7C2f18059c1e3c34ca42b4b35271735d25%7C1700249675">AWS Sagemaker</a></li>
-            <li><a href="https://github.com/raaasin/accidents-database">Dataset</a></li>
-            <li><a href="https://github.com/sanj16/btranalysis">GitHub</a></li>
+            <p>•<a href="https://d-h70uypeu47z8.studio.ap-south-1.sagemaker.aws/jupyter/default/files/accident.ipynb?_xsrf=2%7Ca7b0d085%7C2f18059c1e3c34ca42b4b35271735d25%7C1700249675">  AWS Sagemaker</a> &emsp;&emsp;•<a href="https://github.com/raaasin/accidents-database"> Dataset</a>&emsp;&emsp; • <a href="https://github.com/sanj16/btranalysis"> GitHub</a></p>
         </ul>
-
-        <p>Thank you!</p>
     </div>
-
+</center>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
@@ -65,7 +61,7 @@
             axios.post(apiUrl, payload)
                 .then(response => {
                     const resultElement = document.getElementById('result');
-                    resultElement.innerHTML = `With the following trends its likely: ${response.data["predicted_X"]} accidents may occur in Andra Pradesh in ${year}`;
+                    resultElement.innerHTML = `With the following trends its likely <span class="predicted" style="font-size:2em">${response.data["predicted_X"]}</span> accidents may occur in Andra Pradesh in ${year}`;
                 })
                 .catch(error => {
                     const resultElement = document.getElementById('result');
