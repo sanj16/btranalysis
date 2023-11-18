@@ -108,10 +108,9 @@ body {
     text-shadow: 0.09em 0.05em #66A92F;/
 }
 .word p{
-    font-size: 35%;
+    font-size: 28%;
     color: black;
     font-family:Unbounded;
-    text-shadow: 0.09em 0.05em #66A92F;/
 }
 
 /* Add these styles to your CSS file */
@@ -146,10 +145,11 @@ body {
 
 .title-2{
     color:black;
-    padding:50px;
+    padding:40px;
     font-family:Unbounded;
     text-shadow: 0.08em 0.05em #9b9797;
     height:40dvh;
+    margin-left:10%;
 }
 #bar3{
     width: 60%; 
