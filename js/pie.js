@@ -45,43 +45,14 @@ data.sort((a, b) => a.state.localeCompare(b.state));
 var labels = data.map(item => item.state);
 var values = data.map(item => item.value);
 
-var uniqueColors = generateUniqueColors(data.length); // Generate unique colors
-
 var ctx = document.getElementById('myPieChart').getContext('2d');
-var myPieChart = new Chart(ctx, {
-type: 'pie',
-data: {
-labels: labels,
-datasets: [{
-data: values,
-backgroundColor: uniqueColors,
-borderColor: 'white',
-borderWidth: 1
-}]
-},
-options: {
-animation: {
-animateRotate: true,
-animateScale: true
-},
-plugins: {
-legend: {
-display: false // Set display to false to hide the legend
-}
-},
-layout: {
-padding: {
-left: 10,
-right: 10,
-top: 10,
-bottom: 10
-}
-}
-}
-});
+var rotationAngle = 0; // Initial rotation angle
 
+function updatePieChartRotation(angle) {
+    myPieChart.options.rotation = angle * (Math.PI / 180);
+    myPieChart.update();
+}
 
-// Function to generate unique colors
 function generateUniqueColors(count) {
     var colors = [];
     for (var i = 0; i < count; i++) {
@@ -90,3 +61,49 @@ function generateUniqueColors(count) {
     }
     return colors;
 }
+
+var myPieChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: labels,
+        datasets: [{
+            data: values,
+            backgroundColor: generateUniqueColors(data.length), // Initial colors
+            borderColor: 'white',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        rotation: rotationAngle * (Math.PI / 180), // Set initial rotation
+        animation: {
+            animateRotate: true,
+            animateScale: true,
+            easing: 'linear' // Use linear easing for a constant speed
+        },
+        plugins: {
+            legend: {
+                display: false // Set display to false to hide the legend
+            }
+        },
+        layout: {
+            padding: {
+                left: 10,
+                right: 10,
+                top: 10,
+                bottom: 10
+            }
+        }
+    }
+});
+
+// Add event listener for mouseover
+// Add event listener for mouseover
+document.getElementById('myPieChart').addEventListener('mouseover', function (event) {
+    // Increment the rotation angle each time the mouseover event occurs
+    rotationAngle += 270; // You can adjust the rotation amount as needed
+    updatePieChartRotation(rotationAngle);
+
+    // Generate new unique colors on mouseover
+    myPieChart.data.datasets[0].backgroundColor = generateUniqueColors(data.length);
+    myPieChart.update();
+});
