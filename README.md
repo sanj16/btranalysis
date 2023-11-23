@@ -37,7 +37,7 @@ The project consists of several components:
 
 1. **Data Visualization**: Utilizes Chart.js for state-wise and year-wise analysis.
 2. **Geographical Analysis**: Provides insights into accident-prone areas through an embedded map.
-3. **Machine Learning Integration**: Includes a machine learning model to predict accidents based on historical trends.
+3. **Machine Learning Integration**: Includes a machine learning model to predict accidents based on historical trends, which is an [API](https://github.com/raaasin/acc-api) built in Flask
 4. **Informative Interface**: Offers information on primary causes of accidents and precautionary measures.
 
 ## Installation
